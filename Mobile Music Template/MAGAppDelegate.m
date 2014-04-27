@@ -22,9 +22,12 @@
         NSLog(@"failed to initialize audio components");
     }*/
     
-    if ([self.audioController configureAmbientWithSampleRate:44100 numberChannels:2 mixingEnabled:YES] != PdAudioOK) {
+    if ([self.audioController configureAmbientWithSampleRate:44100 numberChannels:2 mixingEnabled:YES]
+        != PdAudioOK
+        ) {
         NSLog(@"failed to initialize audio components");
     }
+    [self.audioController configureTicksPerBuffer:1];
     
     return YES;
 }

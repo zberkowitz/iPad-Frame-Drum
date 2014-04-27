@@ -1,4 +1,4 @@
-#N canvas -130 58 1005 605 10;
+#N canvas -78 52 1005 605 10;
 #X obj 1077 326 dac~;
 #X text 151 -61 From Xcode;
 #N canvas 0 0 450 300 (subpatch) 0;
@@ -23553,7 +23553,7 @@ Tak \;;
 #X obj 556 57 t b f;
 #X obj 518 58 t b f;
 #X obj 476 57 t b f;
-#X obj 188 39 clip 0 1;
+#X obj 178 37 clip 0 1;
 #X obj 108 46 % 8;
 #N canvas 0 0 450 300 (subpatch) 0;
 #X array Dum 161630 float 3;
