@@ -28,6 +28,7 @@
 		3715B995162F2FA80026E296 /* mag_template.pd in Resources */ = {isa = PBXBuildFile; fileRef = 3715B994162F2FA80026E296 /* mag_template.pd */; };
 		3715B9A2162F42C70026E296 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3715B9A1162F42C70026E296 /* AudioToolbox.framework */; };
 		3715B9A4162F42CD0026E296 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3715B9A3162F42CD0026E296 /* AVFoundation.framework */; };
+		B69A2D1F190D7420002D1A09 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B69A2D1E190D7420002D1A09 /* CoreMotion.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		3715B994162F2FA80026E296 /* mag_template.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mag_template.pd; sourceTree = "<group>"; };
 		3715B9A1162F42C70026E296 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		3715B9A3162F42CD0026E296 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		B69A2D1E190D7420002D1A09 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B69A2D1F190D7420002D1A09 /* CoreMotion.framework in Frameworks */,
 				3715B9A4162F42CD0026E296 /* AVFoundation.framework in Frameworks */,
 				3715B9A2162F42C70026E296 /* AudioToolbox.framework in Frameworks */,
 				3715B993162F2F540026E296 /* libpd-ios.a in Frameworks */,
@@ -144,6 +147,7 @@
 		3715B941162F23330026E296 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B69A2D1E190D7420002D1A09 /* CoreMotion.framework */,
 				3715B942162F23330026E296 /* UIKit.framework */,
 				3715B944162F23330026E296 /* Foundation.framework */,
 				3715B946162F23330026E296 /* CoreGraphics.framework */,
@@ -255,6 +259,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = MAG;
+				LastTestingUpgradeCheck = 0510;
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = MAG;
 			};
@@ -432,7 +437,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -454,7 +459,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -468,7 +473,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mobile Music Template/iPad Frame Drum-Prefix.pch";
 				INFOPLIST_FILE = "Mobile Music Template/iPad Frame Drum-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "iPad Frame Drum";
 				USER_HEADER_SEARCH_PATHS = "libpd/**";
 				WRAPPER_EXTENSION = app;
@@ -481,7 +486,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mobile Music Template/iPad Frame Drum-Prefix.pch";
 				INFOPLIST_FILE = "Mobile Music Template/iPad Frame Drum-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "iPad Frame Drum";
 				USER_HEADER_SEARCH_PATHS = "libpd/**";
 				WRAPPER_EXTENSION = app;

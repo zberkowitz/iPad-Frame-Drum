@@ -8,18 +8,25 @@
 
 #import "MAGViewController.h"
 
+
 @interface MAGViewController ()
 
 @end
 
 @implementation MAGViewController
 
-@synthesize enabled;
-@synthesize enableButton;
+@synthesize tak;
+@synthesize dum;
+
+double currentAcceleration = 0;
+double previousAcceleration = 0;
+double accelerationDifference = 0;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //tak.transform = CGAffineTransformMakeRotation(M_PI / -4);
 	
     // _________________ LOAD Pd Patch ____________________
     dispatcher = [[PdDispatcher alloc] init];
@@ -28,8 +35,29 @@
     if (!patch) {
         NSLog(@"Failed to open patch!");
     }
-    enabled = NO;
+    
+    self.motionManager = [[CMMotionManager alloc] init];
+    self.motionManager.accelerometerUpdateInterval  = 1.0/100.0; // Update at 20Hz
+    if (self.motionManager.accelerometerAvailable) {
+        NSLog(@"Accelerometer avaliable");
+        NSOperationQueue *queue = [NSOperationQueue currentQueue];
+        [self.motionManager startAccelerometerUpdatesToQueue:queue
+                                                 withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
+                                                     CMAcceleration acceleration = accelerometerData.acceleration;
+                                                     
+                                                     currentAcceleration = acceleration.z;
+                                                     accelerationDifference = fabs(currentAcceleration -  previousAcceleration);
+                                                     previousAcceleration = currentAcceleration;
+                                                     if (accelerationDifference >= 0.1) {
+                                                         
+                                          NSLog([NSString stringWithFormat:@"%f", accelerationDifference]);
+                                                     }
+
+                                        }];
+    }
+
 }
+
 
 /*
 - (void)viewDidUnload
@@ -49,22 +77,17 @@
 
 // _________________ UI Interactions with Pd Patch ____________________
 
-- (IBAction)randomPitch:(UIButton *)sender {
-    [PdBase sendBangToReceiver:@"random_note"];
+- (IBAction)Tak:(UIButton *)sender {
+     [PdBase sendFloat:accelerationDifference
+            toReceiver:@"tak_velocity"];
 }
 
-- (IBAction)enable:(UIButton *)sender {
-    
-    if (enabled) {
-        enabled = NO;
-        // enableButton.titleLabel = @"Enable";
-        [enableButton setTitle:@"Enable" forState:UIControlStateNormal];
-        [PdBase sendFloat:0 toReceiver:@"enable"];
-    } else {
-        enabled = YES;
-        [enableButton setTitle:@"Disable" forState:UIControlStateNormal];
-        [PdBase sendFloat:1 toReceiver:@"enable"];
-    }
-    
+- (IBAction)Dum:(UIButton *)sender {
+    [PdBase sendFloat:accelerationDifference
+           toReceiver:@"dum_velocity"];
 }
+
+
+
+
 @end

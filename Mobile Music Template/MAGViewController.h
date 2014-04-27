@@ -8,16 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "PdDispatcher.h"
+#import <CoreMotion/CoreMotion.h>
 
 @interface MAGViewController : UIViewController {
     PdDispatcher *dispatcher;
     void *patch;
 }
-- (IBAction)randomPitch:(UIButton *)sender;
-- (IBAction)enable:(UIButton *)sender;
 
-@property (weak, nonatomic) IBOutlet UIButton *enableButton;
+@property (strong, nonatomic) CMMotionManager *motionManager;
+@property (weak, nonatomic) IBOutlet UIButton *tak;
 
-@property (nonatomic) BOOL *enabled;
+@property (weak, nonatomic) IBOutlet UIButton *dum;
+
 
 @end
