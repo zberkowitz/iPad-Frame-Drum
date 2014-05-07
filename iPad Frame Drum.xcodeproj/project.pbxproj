@@ -29,6 +29,8 @@
 		3715B9A2162F42C70026E296 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3715B9A1162F42C70026E296 /* AudioToolbox.framework */; };
 		3715B9A4162F42CD0026E296 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3715B9A3162F42CD0026E296 /* AVFoundation.framework */; };
 		B69A2D1F190D7420002D1A09 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B69A2D1E190D7420002D1A09 /* CoreMotion.framework */; };
+		B6B03E62191A0E520074B485 /* debounce.pd in Resources */ = {isa = PBXBuildFile; fileRef = B6B03E61191A0E520074B485 /* debounce.pd */; };
+		B6B03E63191A0E520074B485 /* debounce.pd in Resources */ = {isa = PBXBuildFile; fileRef = B6B03E61191A0E520074B485 /* debounce.pd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,7 @@
 		3715B9A1162F42C70026E296 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		3715B9A3162F42CD0026E296 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		B69A2D1E190D7420002D1A09 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		B6B03E61191A0E520074B485 /* debounce.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = debounce.pd; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +130,7 @@
 				3715B9A3162F42CD0026E296 /* AVFoundation.framework */,
 				3715B9A1162F42C70026E296 /* AudioToolbox.framework */,
 				3715B994162F2FA80026E296 /* mag_template.pd */,
+				B6B03E61191A0E520074B485 /* debounce.pd */,
 				3715B984162F27620026E296 /* libpd.xcodeproj */,
 				3715B948162F23330026E296 /* Mobile Music Template */,
 				3715B96F162F23330026E296 /* Mobile Music TemplateTests */,
@@ -311,6 +315,7 @@
 			files = (
 				3715B94D162F23330026E296 /* InfoPlist.strings in Resources */,
 				3715B955162F23330026E296 /* Default.png in Resources */,
+				B6B03E62191A0E520074B485 /* debounce.pd in Resources */,
 				3715B957162F23330026E296 /* Default@2x.png in Resources */,
 				3715B959162F23330026E296 /* Default-568h@2x.png in Resources */,
 				3715B95C162F23330026E296 /* MainStoryboard_iPhone.storyboard in Resources */,
@@ -323,6 +328,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6B03E63191A0E520074B485 /* debounce.pd in Resources */,
 				3715B974162F23340026E296 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

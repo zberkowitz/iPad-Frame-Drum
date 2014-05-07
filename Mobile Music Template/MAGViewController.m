@@ -37,7 +37,7 @@ double accelerationDifference = 0;
     }
     
     self.motionManager = [[CMMotionManager alloc] init];
-    self.motionManager.accelerometerUpdateInterval  = 1.0/100.0; // Update at 20Hz
+    self.motionManager.accelerometerUpdateInterval  = 1.0/10000.0; // Update at 100Hz
     if (self.motionManager.accelerometerAvailable) {
         NSLog(@"Accelerometer avaliable");
         NSOperationQueue *queue = [NSOperationQueue currentQueue];
@@ -48,10 +48,7 @@ double accelerationDifference = 0;
                                                      currentAcceleration = acceleration.z;
                                                      accelerationDifference = fabs(currentAcceleration -  previousAcceleration);
                                                      previousAcceleration = currentAcceleration;
-                                                     if (accelerationDifference >= 0.1) {
-                                                         
-                                          NSLog([NSString stringWithFormat:@"%f", accelerationDifference]);
-                                                     }
+                                   
 
                                         }];
     }
@@ -80,11 +77,18 @@ double accelerationDifference = 0;
 - (IBAction)Tak:(UIButton *)sender {
      [PdBase sendFloat:accelerationDifference
             toReceiver:@"tak_velocity"];
+    NSLog([NSString stringWithFormat:@"%f", accelerationDifference]);
+    
 }
 
 - (IBAction)Dum:(UIButton *)sender {
     [PdBase sendFloat:accelerationDifference
            toReceiver:@"dum_velocity"];
+    NSLog([NSString stringWithFormat:@"%f", accelerationDifference]);
+}
+- (IBAction)Pa:(UIButton *)sender {
+    [PdBase sendFloat:accelerationDifference
+           toReceiver:@"pa_velocity"];
 }
 
 
