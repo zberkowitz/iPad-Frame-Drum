@@ -22,6 +22,12 @@ double currentAcceleration = 0;
 double previousAcceleration = 0;
 double accelerationDifference = 0;
 
+- (NSUInteger) supportedInterfaceOrientations {
+    
+    return UIInterfaceOrientationMaskPortrait;
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
